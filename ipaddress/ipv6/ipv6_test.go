@@ -6,7 +6,7 @@ import (
 
 func TestFormulateIpv6(t *testing.T) {
 	basePrefix := "2002::/32"
-	var bitWidth, maxSubPrefix = 12, 0
+	var bitWidth, maxSubPrefix = 4, 0
 	ipv6Nets, err := FormulateIpv6(basePrefix, bitWidth, maxSubPrefix)
 	if err != nil {
 		t.Error(err)
@@ -21,7 +21,7 @@ func TestFormulateIpv6(t *testing.T) {
 	//b2 := 0xfc00
 	//fmt.Printf("b1:%b b2:%b (b1&b2):%b (b2&b1==b1):%t \n", b1, b2, b2&b1, b2&b1 == b1)
 
-	prefixBeginValue := "f0"
+	prefixBeginValue := "2000"
 	if contain, err := CheckValueInPrefix(basePrefix, bitWidth, prefixBeginValue); err != nil {
 		t.Error(err)
 		return

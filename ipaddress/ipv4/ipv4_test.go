@@ -5,8 +5,8 @@ import (
 )
 
 func TestFormulateIpv4(t *testing.T) {
-	basePrefix := "10.0.0.0/16"
-	var bitWidth, maxSubPrefix = 8, 0
+	basePrefix := "10.83.0.0/17"
+	var bitWidth, maxSubPrefix = 1, 0
 	ipv4Nets, err := FormulateIpv4(basePrefix, bitWidth, maxSubPrefix)
 	if err != nil {
 		t.Error(err)

@@ -103,6 +103,9 @@ func parsePrefixBeginValue(beginValue string, bitWidth, subPrefixLength int) (ui
 		return 0, fmt.Errorf("prefix %s value is too bigger than %x", beginValue, maxValue)
 	}
 
+	fmt.Printf("beginValueSlice:%+v ,total:%d bytesInteger:%d %b rightPoint:%d\n", beginValueSlice, total, bytesInteger, bytesInteger, rightPoint)
+	fmt.Printf("maxValue:%d %b \n", maxValue, maxValue)
+	fmt.Println("===", maxValue&bytesInteger, maxValue, bytesInteger, (maxValue&bytesInteger) == bytesInteger, bytesInteger>>rightPoint)
 	if (maxValue & bytesInteger) == bytesInteger {
 		return bytesInteger >> rightPoint, nil
 	}
